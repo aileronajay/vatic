@@ -15,7 +15,7 @@ import vision.track.interpolation
 import turkic.models
 from models import *
 import cStringIO
-import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont
 import qa
 import merge
 import parsedatetime
@@ -1177,3 +1177,22 @@ class listvideos(Command):
                     print "{0:>3}/{1:<8}".format(video.numcompleted, video.numjobs),
                     print "${0:<15.2f}".format(video.cost),
                 print ""
+
+@handler("test the cli","test")
+class testinput(Command):
+    def setup(self):
+        parser = argparse.ArgumentParser(parents=[importparser])		
+        parser.add_argument("--location", action="store_true", default = "")
+        return parser
+	
+    def __call__(self,args):
+        print "test directive called"
+        print "location provided is ", args.location
+        print Job;
+        #print jobs
+        # hack this later, how to pass arguments to this script
+        # hard code an image location
+        
+        
+
+

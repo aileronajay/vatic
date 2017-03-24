@@ -9,7 +9,7 @@ function ui_build(job)
     var objectui = new TrackObjectUI($("#newobjectbutton"), $("#objectcontainer"), videoframe, job, player, tracks);
 
     ui_setupbuttons(job, player, tracks);
-    ui_setupslider(player);
+    //ui_setupslider(player);
     ui_setupsubmit(job, tracks);
     ui_setupclickskip(job, player, tracks, objectui);
     ui_setupkeyboardshortcuts(job, player);
@@ -59,9 +59,9 @@ function ui_setup(job)
 
     $("#annotatescreen").css("width", (playerwidth + 205) + "px");
 
-    $("#bottombar").append("<div id='playerslider'></div>");
-    $("#bottombar").append("<div class='button' id='rewindbutton'>Rewind</div> ");
-    $("#bottombar").append("<div class='button' id='playbutton'>Play</div> ");
+ //   $("#bottombar").append("<div id='playerslider'></div>");
+ //   $("#bottombar").append("<div class='button' id='rewindbutton'>Rewind</div> ");
+ //   $("#bottombar").append("<div class='button' id='playbutton'>Play</div> ");
 
     $("#topbar").append("<div id='newobjectcontainer'>" +
         "<div class='button' id='newobjectbutton'>New Object</div></div>");
@@ -408,9 +408,9 @@ function ui_setupclickskip(job, player, tracks, objectui)
         }
     });
 
-    $("#playerslider").bind("slidestop", function() {
-        ui_snaptokeyframe(job, player);
-    });
+  //  $("#playerslider").bind("slidestop", function() {
+  //      ui_snaptokeyframe(job, player);
+  //  });
 }
 
 function ui_loadprevious(job, objectui)
@@ -625,7 +625,7 @@ function ui_disable()
         $("#playbutton").button("option", "disabled", true);
         $("#rewindbutton").button("option", "disabled", true);
         $("#submitbutton").button("option", "disabled", true);
-        $("#playerslider").slider("option", "disabled", true);
+     //   $("#playerslider").slider("option", "disabled", true);
 
         console.log("Disengaged UI");
     }
@@ -641,7 +641,7 @@ function ui_enable()
         $("#playbutton").button("option", "disabled", false);
         $("#rewindbutton").button("option", "disabled", false);
         $("#submitbutton").button("option", "disabled", false);
-        $("#playerslider").slider("option", "disabled", false);
+    //    $("#playerslider").slider("option", "disabled", false);
 
         console.log("Engaged UI");
     }

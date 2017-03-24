@@ -97,8 +97,9 @@ function loadingscreen(job)
     });
 
     eventlog("preload", "Start preloading");
-
-    preloadvideo(job.start, job.stop, job.frameurl,
+      // script hack to show just the first frame   
+      preloadvideo(job.start, job.start, job.frameurl,
+    //preloadvideo(job.start, job.stop, job.frameurl,
         preloadslider($("#loadingscreenslider"), function(progress) {
             if (progress == 1)
             {

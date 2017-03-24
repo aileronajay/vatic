@@ -1,6 +1,9 @@
 import os.path, sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
+import site
+site.addsitedir('/usr/local/lib/python2.7/dist-packages')
+site.addsitedir('/usr/lib/python2.7/dist-packages')
 import config
 from turkic.server import handler, application
 from turkic.database import session

@@ -314,6 +314,9 @@ code
     border-style : solid;
     border-width : 2px;
     z-index : 5;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 50%;
 }
 
 .boundingbox .boundingboxtext
